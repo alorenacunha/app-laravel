@@ -21,9 +21,9 @@ steps:
   args: ['exec', '-t','app','php','/var/www/artisan', 'key:generate']
 
 - id: "Exec migrate"
-name: 'gcr.io/cloud-builders/docker'
-args: ['exec', '-t','app','php','/var/www/artisan', 'migrate']
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t','app','php','/var/www/artisan', 'migrate']
 
 - id: "Exec phpunit"
-name: 'gcr.io/cloud-builders/docker'
-args: ['exec', '-t','app','php','/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t','app','php','/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
